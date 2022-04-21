@@ -1,15 +1,8 @@
-# Basic Sample Hardhat Project
+# Hive Capital Smart Contracts
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+These smart contracts give the members of Hive Capital the ability to govern together.
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+<h2>Hive Token</h2>
+<p>
+    The Hive token is used as a governance token over the DAOs funds. The DAO has the ability to mint and burns tokens. Members can stake their tokens to earn rewards that come from the tokens 4% inflation. 
+</p>
