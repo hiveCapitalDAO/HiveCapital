@@ -54,7 +54,7 @@ export default WhyHiveCapital
 const Container = styled.div`
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(to bottom, black, #222222);
+  background: linear-gradient(to bottom, black, #222222, black);
 
   @media (min-width: 1024px) {
     display: flex;
