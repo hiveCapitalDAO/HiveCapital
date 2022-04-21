@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import styled from '@emotion/styled'
-import Header from '../components/Header'
-import Body from '../components/Body'
-import Footer from '../components/Footer'
+import Landing from '../components/Landing'
+import WhyHiveCapital from '../components/WhyHiveCapital'
 
 export default function Home() {
   return (
@@ -18,15 +17,10 @@ export default function Home() {
         />
       </Head>
 
-      <Header />
-      <Body />
-      <Footer />
+      <Landing />
+      <WhyHiveCapital />
     </Container>
   )
 }
 
-const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(to top, black, #222222);
-`
+const Container = styled.div``
