@@ -32,7 +32,7 @@ function WhyHiveCapital() {
             <Title>Own a pieace of a bigger pie</Title>
             <Description>
               Join in building a diverse portfolio with both on and off chain
-              assets
+              assets.
             </Description>
           </DescriptionCard>
 
@@ -78,6 +78,7 @@ const DescriptionContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   height: 50%;
 
   @media (min-width: 768px) {
@@ -89,6 +90,7 @@ const DescriptionContainer = styled.div`
     height: 100%;
     width: 50%;
     justify-content: center;
+    align-items: center;
     margin-right: 70px;
   }
 `
