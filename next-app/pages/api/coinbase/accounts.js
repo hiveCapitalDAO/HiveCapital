@@ -2,7 +2,7 @@ import coinbaseAuth from './auth'
 import axios from './axios'
 
 export default async function handler(req, res) {
-  const [cb_access_sign, timestamp] = coinbaseAuth('GET', '/accounts')
+  const [cb_access_sign, timestamp] = coinbaseAuth('GET', '/accounts', '')
 
   try {
     const response = await axios({

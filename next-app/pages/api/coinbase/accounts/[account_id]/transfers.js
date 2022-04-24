@@ -1,18 +1,18 @@
-import coinbaseAuth from '../auth'
-import axios from '../axios'
+import coinbaseAuth from '../../auth'
+import axios from '../../axios'
 
 export default async function handler(req, res) {
   const { account_id } = req.query
   const [cb_access_sign, timestamp] = coinbaseAuth(
     'GET',
-    `/accounts/${account_id}`,
+    `/accounts/${account_id}/transfers`,
     '',
   )
 
   try {
     const response = await axios({
       methood: 'GET',
-      url: `accounts/${account_id}`,
+      url: `accounts/${account_id}/transfers`,
       headers: {
         'CB-ACCESS-KEY': process.env.CB_ACCESS_KEY,
         'CB-ACCESS-SIGN': cb_access_sign,
