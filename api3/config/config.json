@@ -1,0 +1,156 @@
+{
+  "chains": [
+    {
+      "authorizers": [],
+      "contracts": {
+        "AirnodeRrp": "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"
+      },
+      "id": "4",
+      "providers": {
+        "myChainProvider": {
+          "url": "${CHAIN_PROVIDER_URL}"
+        }
+      },
+      "type": "evm",
+      "options": {
+        "txType": "eip1559",
+        "priorityFee": {
+          "value": 3.12,
+          "unit": "gwei"
+        },
+        "baseFeeMultiplier": 2,
+        "fulfillmentGasLimit": 500000
+      },
+      "maxConcurrency": 100
+    }
+  ],
+  "nodeSettings": {
+    "cloudProvider": {
+      "type": "local"
+    },
+    "airnodeWalletMnemonic": "${AIRNODE_WALLET_MNEMONIC}",
+    "heartbeat": {
+      "enabled": false
+    },
+    "httpGateway": {
+      "enabled": false
+    },
+    "httpSignedDataGateway": {
+      "enabled": false
+    },
+    "logFormat": "plain",
+    "logLevel": "INFO",
+    "nodeVersion": "0.6.0",
+    "stage": "dev"
+  },
+  "triggers": {
+    "rrp": [
+      {
+        "endpointId": "0xffbb599cc617b06d899c91039a50651f072d6726e3b1fb04899f8b43d1b6fdd3",
+        "oisTitle": "Hive Capital off chain accounts",
+        "endpointName": "coinbaseOrder"
+      }
+    ],
+    "http": [
+      {
+        "endpointId": "0xffbb599cc617b06d899c91039a50651f072d6726e3b1fb04899f8b43d1b6fdd3",
+        "oisTitle": "Hive Capital off chain accounts",
+        "endpointName": "coinbaseOrder"
+      }
+    ],
+    "httpSignedData": []
+  },
+  "ois": [
+    {
+      "oisFormat": "1.0.0",
+      "title": "Hive Capital off chain accounts",
+      "version": "1.0.0",
+      "apiSpecifications": {
+        "servers": [
+          {
+            "url": "https://www.hivecapitaldao.com/api"
+          }
+        ],
+        "paths": {
+          "/coinbase/orders": {
+            "post": {
+              "parameters": [
+                {
+                  "in": "query",
+                  "name": "side"
+                },
+                {
+                  "in": "query",
+                  "name": "product_id"
+                },
+                {
+                  "in": "query",
+                  "name": "type"
+                },
+                {
+                  "in": "query",
+                  "name": "size"
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "securitySchemes": {}
+        },
+        "security": {}
+      },
+      "endpoints": [
+        {
+          "name": "coinbaseOrder",
+          "operation": {
+            "method": "post",
+            "path": "/coinbase/orders"
+          },
+          "fixedOperationParameters": [],
+          "reservedParameters": [
+            {
+              "name": "_type",
+              "fixed": "string"
+            },
+            {
+              "name": "_path",
+              "fixed": "id"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "side",
+              "operationParameter": {
+                "in": "query",
+                "name": "side"
+              }
+            },
+            {
+              "name": "product_id",
+              "operationParameter": {
+                "in": "query",
+                "name": "product_id"
+              }
+            },
+            {
+              "name": "type",
+              "operationParameter": {
+                "in": "query",
+                "name": "type"
+              }
+            },
+            {
+              "name": "size",
+              "operationParameter": {
+                "in": "query",
+                "name": "size"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "apiCredentials": []
+}

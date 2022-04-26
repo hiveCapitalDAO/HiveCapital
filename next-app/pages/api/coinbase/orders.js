@@ -45,5 +45,38 @@ export default async function handler(req, res) {
       res.status(500).json({ Error: 'Creating new order' })
     }
   } else if (req.method === 'GET') {
+    var queryParams = '?'
+    var iteraor = 0
+    for (const [key, value] of Object.entries(req.query)) {
+      queryParams += key + '=' + value
+      console.log(Object.keys(req.query).length)
+      if (iteraor !== Object.keys(req.query).length - 1) queryParams += '&'
+      iteraor++
+    }
+    console.log(queryParams)
+
+    const [cb_access_sign, timestamp] = coinbaseAuth(
+      'GET',
+      `/orders${queryParams}`,
+      '',
+    )
+
+    try {
+      const repsonse = await axios({
+        method: 'GET',
+        url: `orders${queryParams}`,
+        headers: {
+          Accept: 'application/json',
+          'CB-ACCESS-KEY': process.env.CB_ACCESS_KEY,
+          'CB-ACCESS-SIGN': cb_access_sign,
+          'CB-ACCESS-TIMESTAMP': timestamp,
+          'CB-ACCESS-PASSPHRASE': process.env.CB_PASSPHRASE,
+        },
+      })
+      res.status(200).json(repsonse.data)
+    } catch (err) {
+      console.log(err)
+      res.status(500).json({ Error: 'Fething orders' })
+    }
   }
 }

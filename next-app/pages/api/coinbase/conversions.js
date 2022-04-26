@@ -31,6 +31,7 @@ export default async function handler(req, res) {
     })
     res.status(200).json(respose.data)
   } catch (err) {
+    console.log(err)
     res.status(500).json({ Error: 'failed conversion' })
   }
 }
