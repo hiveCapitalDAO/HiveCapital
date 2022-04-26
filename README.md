@@ -24,9 +24,9 @@
 
 ## Structure
 
-| Codebase                               |                               Description                               |
-| :------------------------------------- | :---------------------------------------------------------------------: |
-| [harthat](hardhat)                     |                        Solidity Smart Contracts                         |
-| [next-app](next-app)                   |                             Next JS Client                              |
-| [off-chain accounts api](next-app/api) |               Api communicating to dao off chain accounts               |
-| [api3]()                               | Api3 allows the solidity smart contracts to call off-chain accounts api |
+| Codebase                                     |                               Description                               |
+| :------------------------------------------- | :---------------------------------------------------------------------: |
+| [harthat](hardhat)                           |                        Solidity Smart Contracts                         |
+| [next-app](next-app)                         |                             Next JS Client                              |
+| [off-chain accounts api](next-app/pages/api) |               Api communicating to dao off chain accounts               |
+| [api3]()                                     | Api3 allows the solidity smart contracts to call off-chain accounts api |
