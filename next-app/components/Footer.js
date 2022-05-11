@@ -12,7 +12,7 @@ function Footer() {
 export default Footer
 
 const Container = styled.div`
-  height: 5%;
+  height: 12%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -22,9 +22,14 @@ const Container = styled.div`
 const WhyText = styled.div`
   font-size: 14px;
   color: white;
-  font-size: 18px;
+  font-size: 58px;
   font-family: Inter, sans-serif;
-  font-weight: 600;
+  font-weight: 800;
   padding-bottom: 15px;
   border-bottom: 2px solid #fbbf84;
+  line-height: 70px;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
 `

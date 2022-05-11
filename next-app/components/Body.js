@@ -5,59 +5,30 @@ import { Button } from '@mui/material'
 import { useMediaQuery } from '@mui/material'
 
 function Body() {
-  const matchces = useMediaQuery('(min-width: 1100px) ')
-  const matchces2 = useMediaQuery('(min-height: 700px)')
-  const matchces3 = useMediaQuery('(min-height: 1200px)')
   return (
     <Container>
       <InfoContainer>
-        <InnerInfoContainer>
+        <InfoCard>
           <InfoTitle>Hive Capital DAO</InfoTitle>
           <Description>
-            Self governed entity autonomously investing into publicly traded
-            companies on the stock market to accrue value for all members.
-            Combining Defi and blockchain governance with legacy financial
-            systems. Built on top of the Milkomeda Cardano Sidechain for
-            interoperability.{' '}
+            Self governed entity autonomously investing into both on-chain and
+            off-chain assets to accrue value for all members. Combining Defi and
+            blockchain governance with legacy financial systems. Built on top of
+            the Milkomeda Cardano Sidechain for interoperability.{' '}
           </Description>
           <LaunchAppBtn>Launch App</LaunchAppBtn>
-        </InnerInfoContainer>
+        </InfoCard>
       </InfoContainer>
-      <ImageContainer>
-        {matchces && (
-          <Image
-            src={'/investmentImg.png'}
-            alt="Investment image"
-            height={459}
-            width={598}
-          />
-        )}
-        {!matchces && matchces2 && !matchces3 && (
-          <Image
-            src={'/investmentImg.png'}
-            alt="Investment image"
-            height={220}
-            width={300}
-          />
-        )}
-        {!matchces2 && (
-          <Image
-            src={'/investmentImg.png'}
-            alt="Investment image"
-            height={150}
-            width={150}
-          />
-        )}
 
-        {matchces3 && (
-          <Image
+      <RightContainer>
+        <ImageContainer>
+          <CoolImage
             src={'/investmentImg.png'}
             alt="Investment image"
-            height={459}
-            width={598}
+            layout="fill"
           />
-        )}
-      </ImageContainer>
+        </ImageContainer>
+      </RightContainer>
     </Container>
   )
 }
@@ -65,20 +36,25 @@ function Body() {
 export default Body
 
 const Container = styled.div`
-  height: 93%;
+  height: 75%;
   width: 100%;
   display: flex;
 
   @media (max-width: 1100px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `
 
 const InfoContainer = styled.div`
   width: 50%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 
   @media (max-width: 1100px) {
     width: 100%;
+    /* height: 50%; */
   }
 `
 
@@ -97,6 +73,27 @@ const InnerInfoContainer = styled.div`
   }
 `
 
+const InfoCard = styled.div`
+  background-color: #282828;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 45px;
+  border-radius: 80px;
+  width: 80%;
+  /* margin-left: 40px; */
+
+  @media (max-width: 1100px) {
+    /* height: 70%; */
+    width: 65%;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 768px) {
+  }
+`
+
 const InfoTitle = styled.div`
   background-image: linear-gradient(to top, #fbbf84, #ffe2b7);
   -webkit-background-clip: text;
@@ -106,7 +103,7 @@ const InfoTitle = styled.div`
   text-align: center;
   z-index: 100;
 
-  font-size: 80px;
+  font-size: 75px;
   font-weight: bold;
   font-family: Inter, sans-serif;
   letter-spacing: 3px;
@@ -118,12 +115,12 @@ const InfoTitle = styled.div`
 
   @media (max-width: 1100px) {
     font-size: 60px;
-    margin-top: 150px;
+    /* margin-top: 150px; */
   }
 
   @media (max-width: 768px) {
     font-size: 55px;
-    margin-top: 100px;
+    /* margin-top: 100px; */
   }
 
   @media (max-width: 598px) {
@@ -134,23 +131,23 @@ const InfoTitle = styled.div`
 const Description = styled.div`
   font-size: 25px;
   color: white;
-  width: 700px;
+  width: 650px;
   text-align: start;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.75px;
   margin-top: 20px;
 
   @media (max-width: 1400px) {
-    width: 550px;
+    width: 500px;
     /* margin-top: 200px; */
   }
 
-  @media (max-width: 1250px) {
-    width: 475px;
+  @media (max-width: 1100px) {
+    width: 550px;
     font-size: 20px;
   }
 
   @media (max-width: 768px) {
-    width: 500px;
+    width: 450px;
     font-size: 20px;
   }
 
@@ -187,19 +184,41 @@ const LaunchAppBtn = styled(Button)`
   }
 `
 
-const ImageContainer = styled.div`
+const RightContainer = styled.div`
+  /* width: 100%;
+  height: 100%; */
   width: 50%;
   height: 100%;
-  justify-content: center;
-  align-items: center;
   display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 1100px) {
     width: 100%;
+  }
+`
+
+const ImageContainer = styled.div`
+  width: 80%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  position: relative;
+
+  @media (max-width: 1100px) {
+    width: 100%;
+    /* height: 50%; */
   }
 
   @media (max-width: 768px) {
     width: 100%;
     margin-top: 20px;
   }
+`
+
+const CoolImage = styled(Image)`
+  object-fit: contain;
+  width: 100%;
+  position: relative;
 `

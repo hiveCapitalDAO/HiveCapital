@@ -1,8 +1,13 @@
 import coinbaseAuth from './auth'
 import axios from './axios'
+require('dotenv').config()
 
 export default async function handler(req, res) {
-  const [cb_access_sign, timestamp] = coinbaseAuth('GET', '/coinbase-accounts', '')
+  const [cb_access_sign, timestamp] = coinbaseAuth(
+    'GET',
+    '/coinbase-accounts',
+    '',
+  )
 
   try {
     const response = await axios({

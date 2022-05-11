@@ -5,6 +5,7 @@ import { Button } from '@mui/material'
 import { useState, useEffect } from 'react'
 import DragHandleIcon from '@mui/icons-material/DragHandle'
 import Drawer from '@mui/material/Drawer'
+import Link from 'next/link'
 
 function Header() {
   const [drawerState, setDrawerState] = useState(false)
@@ -38,14 +39,22 @@ function Header() {
           onClose={toggleDrawer('right', false)}
         >
           <DrawerContainer>
-            <Text>Overview</Text>
-            <Text>Portfolio</Text>
             <Text
-              href="https://hivecapitaldao.gitbook.io/whitepaper/"
-              target="_blank"
+              onClick={() => {
+                window.scrollTo(0, 1000)
+                setDrawerState(false)
+              }}
             >
-              Whitepaper
+              Overview
             </Text>
+
+            <Text>Portfolio</Text>
+            <Link href="https://hivecapitaldao.gitbook.io/whitepaper/">
+              <Text target="_blank">Whitepaper</Text>
+            </Link>
+
+            <Text>FAQ</Text>
+
             <EnterAppBtn>Enter App</EnterAppBtn>
           </DrawerContainer>
         </Drawer>
@@ -54,7 +63,8 @@ function Header() {
       </PullOutIconContainer>
 
       <HeadersButtonsContainer>
-        <Text>Overview</Text>
+        <Text onClick={() => window.scrollTo(0, 1000)}>Overview</Text>
+
         <Text>Portfolio</Text>
         <Text
           href="https://hivecapitaldao.gitbook.io/whitepaper0.1/"
@@ -62,6 +72,8 @@ function Header() {
         >
           Whitepaper
         </Text>
+
+        <Text>FAQ</Text>
 
         <EnterAppBtn>Enter App</EnterAppBtn>
       </HeadersButtonsContainer>
@@ -74,7 +86,7 @@ export default Header
 const Container = styled.div`
   height: 10%;
   width: 100%;
-  position: absolute;
+  /* position: absolute; */
   display: flex;
 `
 
