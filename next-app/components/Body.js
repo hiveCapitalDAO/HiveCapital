@@ -124,7 +124,7 @@ const InfoTitle = styled.div`
   }
 
   @media (max-width: 598px) {
-    font-size: 35px;
+    font-size: 30px;
   }
 `
 
@@ -152,8 +152,9 @@ const Description = styled.div`
   }
 
   @media (max-width: 598px) {
-    width: 350px;
-    font-size: 18px;
+    width: 325px;
+    font-size: 12px;
+    text-align: center;
   }
 `
 

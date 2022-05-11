@@ -16,7 +16,7 @@ function WhyHiveCapital() {
 
         <DescriptionContainer>
           <DescriptionWrapped>
-            <Fade right cascade>
+            <Fade right>
               <DescriptionCard>
                 <Title>The Peoples Investment Fund</Title>
                 <Description>

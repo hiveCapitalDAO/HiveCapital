@@ -22,7 +22,7 @@ const Container = styled.div`
 const WhyText = styled.div`
   font-size: 14px;
   color: white;
-  font-size: 58px;
+  font-size: 42px;
   font-family: Inter, sans-serif;
   font-weight: 800;
   padding-bottom: 15px;
