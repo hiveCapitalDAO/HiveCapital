@@ -16,7 +16,7 @@ function WhyHiveCapital() {
 
         <DescriptionContainer>
           <DescriptionWrapped>
-            <Fade right>
+            <Fade right cascade ssrFadeout>
               <DescriptionCard>
                 <Title>The Peoples Investment Fund</Title>
                 <Description>
@@ -122,7 +122,9 @@ const DescriptionWrapped = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
 `
 
 const DescriptionCard = styled.div`
