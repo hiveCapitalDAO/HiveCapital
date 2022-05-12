@@ -9,27 +9,27 @@ function HighlightGrid() {
       <Roll left ssrFadeout>
         <Card>
           <ImageContainer>
-            <MyImage src="/coin.png" layout="fill" />
+            <MyImage src="/coin.png" layout="fill" alt="coin" />
           </ImageContainer>
 
           <DescriptionTitle>Access to $30 Trillion Market</DescriptionTitle>
           <Description>
             Hive Capital is brining the Stock Market to investment DAOs. This
             automated system allows the DAO to invest in companies on the stock
-            market to grow the treasury over time.{' '}
+            market to grow the treasury over time.
           </Description>
         </Card>
 
         <Card>
           <ImageContainer>
-            <MyImage src="/money.png" layout="fill" />
+            <MyImage src="/money.png" layout="fill" alt="money" />
           </ImageContainer>
 
           <DescriptionTitle>Distributed Decision Making</DescriptionTitle>
           <Description>
-            Compared to most investment funds Hive Capital's decisions will come
-            from all of its members. The Hive Mind of the DAO will work together
-            to find the best investments.
+            Compared to most investment funds Hive Capital&apos;s decisions will
+            come from all of its members. The Hive Mind of the DAO will work
+            together to find the best investments.
           </Description>
         </Card>
       </Roll>
@@ -37,7 +37,7 @@ function HighlightGrid() {
       <Roll right ssrFadeout>
         <Card>
           <ImageContainer>
-            <MyImage src="/blockchain.png" layout="fill" />
+            <MyImage src="/blockchain.png" layout="fill" alt="blockchain" />
           </ImageContainer>
 
           <DescriptionTitle>Built on Milkomeda/Cardano</DescriptionTitle>
@@ -50,12 +50,12 @@ function HighlightGrid() {
 
         <Card>
           <ImageContainer>
-            <MyImage src="/stocks.png" layout="fill" />
+            <MyImage src="/stocks.png" layout="fill" alt="stocks" />
           </ImageContainer>
 
           <DescriptionTitle>Build and Grow Together</DescriptionTitle>
           <Description>
-            All members incentives are aligned to increase the value of the DAO.{' '}
+            All members incentives are aligned to increase the value of the DAO.
           </Description>
         </Card>
       </Roll>

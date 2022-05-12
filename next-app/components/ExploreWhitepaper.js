@@ -15,6 +15,7 @@ function ExploreWhitepaper() {
             src="/circlearrow.png"
             layout="fill"
             style={{ objectFit: 'contain', width: '100%' }}
+            alt="Circle arrow"
           />
         </ImageContainer>
       </Wrapper>

@@ -15,6 +15,7 @@ function Tokenomics() {
             src="/tokenomics.png"
             layout="fill"
             style={{ objectFit: 'contain', width: '100%' }}
+            alt="tokenomics"
           />
         </ImageContainer>
       </GraphContainer>
