@@ -2,6 +2,11 @@ import Head from 'next/head'
 import styled from '@emotion/styled'
 import Landing from '../components/Landing'
 import WhyHiveCapital from '../components/WhyHiveCapital'
+import HighlightGrid from '../components/HighlightGrid'
+import ExploreWhitepaper from '../components/ExploreWhitepaper'
+import Tokenomics from '../components/Tokenomics'
+import FAQ from '../components/FAQ'
+import HomePageFooter from '../components/HomePageFooter'
 
 export default function Home() {
   return (
@@ -19,6 +24,11 @@ export default function Home() {
 
       <Landing />
       <WhyHiveCapital />
+      <HighlightGrid />
+      <ExploreWhitepaper />
+      <Tokenomics />
+      <FAQ />
+      <HomePageFooter />
     </Container>
   )
 }

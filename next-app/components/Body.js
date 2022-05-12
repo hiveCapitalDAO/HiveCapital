@@ -13,8 +13,7 @@ function Body() {
           <Description>
             Self governed entity autonomously investing into both on-chain and
             off-chain assets to accrue value for all members. Combining Defi and
-            blockchain governance with legacy financial systems. Built on top of
-            the Milkomeda Cardano Sidechain for interoperability.{' '}
+            blockchain governance with legacy financial systems.{' '}
           </Description>
           <LaunchAppBtn>Launch App</LaunchAppBtn>
         </InfoCard>

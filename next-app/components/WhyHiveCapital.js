@@ -88,6 +88,10 @@ const ImageGraphicContainer = styled.div`
     width: 50%;
     /* margin-left: 40px; */
   }
+
+  @media (max-width: 768px) {
+    height: 50%;
+  }
 `
 
 const MyImage = styled(Image)`
@@ -99,13 +103,12 @@ const DescriptionContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   height: 50%;
 
-  @media (min-width: 768px) {
-    /* justify-content: start; */
-    /* padding-left: 40px; */
-  }
+  /* @media (max-width: 768px) {
+    height: 55%;
+  } */
 
   @media (min-width: 1024px) {
     height: 100%;
@@ -122,9 +125,17 @@ const DescriptionWrapped = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   overflow-x: hidden;
+
+  @media (max-width: 1100px) {
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    padding: 50px;
+  }
 `
 
 const DescriptionCard = styled.div`

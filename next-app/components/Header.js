@@ -53,7 +53,14 @@ function Header() {
               <Text target="_blank">Whitepaper</Text>
             </Link>
 
-            <Text>FAQ</Text>
+            <Text
+              onClick={() => {
+                window.scrollTo(0, 5000)
+                setDrawerState(false)
+              }}
+            >
+              FAQ
+            </Text>
 
             <EnterAppBtn>Enter App</EnterAppBtn>
           </DrawerContainer>
@@ -73,7 +80,7 @@ function Header() {
           Whitepaper
         </Text>
 
-        <Text>FAQ</Text>
+        <Text onClick={() => window.scrollTo(0, 3000)}>FAQ</Text>
 
         <EnterAppBtn>Enter App</EnterAppBtn>
       </HeadersButtonsContainer>
