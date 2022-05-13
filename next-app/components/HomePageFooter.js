@@ -7,13 +7,25 @@ function HomePageFooter() {
     <Container>
       <JoinText>Join + Support</JoinText>
       <IconContainer>
-        <ImageContainer>
+        <ImageContainer
+          href="https://twitter.com/hiveCapitalDAO"
+          target="_blank"
+          alt="twitter"
+        >
           <Myimage src="/twitter.png" layout="fill" />
         </ImageContainer>
-        <ImageContainer>
+        <ImageContainer
+          href="https://discord.gg/k3X5GHEp5v"
+          target="_blank"
+          alt="discord"
+        >
           <Myimage src="/discord.png" layout="fill" />
         </ImageContainer>
-        <ImageContainer>
+        <ImageContainer
+          href="https://github.com/hiveCapitalDAO/HiveCapital"
+          target="_blank"
+          alt="github"
+        >
           <Myimage src="/github.png" layout="fill" />
         </ImageContainer>
       </IconContainer>
@@ -52,7 +64,7 @@ const IconContainer = styled.div`
   margin-top: 20px;
 `
 
-const ImageContainer = styled.div`
+const ImageContainer = styled.a`
   height: 40px;
   width: 40px;
   margin: 8px;

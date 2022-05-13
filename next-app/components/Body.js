@@ -15,7 +15,7 @@ function Body() {
             off-chain assets to accrue value for all members. Combining Defi and
             blockchain governance with legacy financial systems.{' '}
           </Description>
-          <LaunchAppBtn>Launch App</LaunchAppBtn>
+          <LaunchAppBtn>Launch App Soon</LaunchAppBtn>
         </InfoCard>
       </InfoContainer>
 
