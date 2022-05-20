@@ -16,7 +16,7 @@ function Body() {
             blockchain governance with legacy financial systems.{' '}
           </Description>
 
-          <Link href="/app">
+          <Link href="/app" passHref>
             <LaunchAppBtn>Launch App</LaunchAppBtn>
           </Link>
         </InfoCard>

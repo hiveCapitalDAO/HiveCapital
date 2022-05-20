@@ -57,6 +57,7 @@ function App({ assets }) {
                 {assets.map((asset) => {
                   return (
                     <div
+                      key={asset.asset}
                       style={{
                         width: '100%',
                         display: 'flex',
@@ -64,7 +65,7 @@ function App({ assets }) {
                         justifyContent: 'center',
                       }}
                     >
-                      <NFTContainer key={asset.asset}>
+                      <NFTContainer>
                         <NFTImageContainer>
                           <Image
                             src={`https://ipfs.io/ipfs/${
@@ -87,7 +88,7 @@ function App({ assets }) {
       </ContentContainer>
 
       <BottomNav>
-        <Link href="/">
+        <Link href="/" passHref>
           <HCLogoContainer>
             <HCImageLogo src="/hcIcon.png" layout="fill" />
           </HCLogoContainer>

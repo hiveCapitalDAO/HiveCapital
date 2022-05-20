@@ -48,7 +48,7 @@ function Header() {
               Overview
             </Text>
 
-            <Link href="https://hivecapitaldao.gitbook.io/whitepaper/">
+            <Link href="https://hivecapitaldao.gitbook.io/whitepaper/" passHref>
               <Text target="_blank">Whitepaper</Text>
             </Link>
 
@@ -70,7 +70,7 @@ function Header() {
               Connect
             </Text>
 
-            <Link href="/app">
+            <Link href="/app" passHref>
               <EnterAppBtn>Enter App</EnterAppBtn>
             </Link>
           </DrawerContainer>
@@ -82,17 +82,14 @@ function Header() {
       <HeadersButtonsContainer>
         <Text onClick={() => window.scrollTo(0, 1000)}>Overview</Text>
 
-        <Text
-          href="https://hivecapitaldao.gitbook.io/whitepaper0.1/"
-          target="_blank"
-        >
-          Whitepaper
-        </Text>
+        <Link href="https://hivecapitaldao.gitbook.io/whitepaper/" passHref>
+          <Text target="_blank">Whitepaper</Text>
+        </Link>
 
         <Text onClick={() => window.scrollTo(0, 3000)}>FAQ</Text>
         <Text onClick={() => window.scrollTo(0, 4000)}>Connect</Text>
 
-        <Link href="/app">
+        <Link href="/app" passHref>
           <EnterAppBtn>Enter App</EnterAppBtn>
         </Link>
       </HeadersButtonsContainer>
