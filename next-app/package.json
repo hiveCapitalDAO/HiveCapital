@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@alpacahq/alpaca-trade-api": "^2.14.0",
+    "@blockfrost/blockfrost-js": "^4.1.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.6.2",

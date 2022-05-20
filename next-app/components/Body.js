@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import { Button } from '@mui/material'
-import { useMediaQuery } from '@mui/material'
+import Link from 'next/link'
 
 function Body() {
   return (
@@ -15,7 +15,10 @@ function Body() {
             off-chain assets to accrue value for all members. Combining Defi and
             blockchain governance with legacy financial systems.{' '}
           </Description>
-          <LaunchAppBtn>Launch App Soon</LaunchAppBtn>
+
+          <Link href="/app">
+            <LaunchAppBtn>Launch App</LaunchAppBtn>
+          </Link>
         </InfoCard>
       </InfoContainer>
 
