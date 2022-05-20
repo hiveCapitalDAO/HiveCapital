@@ -56,18 +56,27 @@ function App({ assets }) {
               <NFTsContainer>
                 {assets.map((asset) => {
                   return (
-                    <NFTContainer key={asset.asset}>
-                      <NFTImageContainer>
-                        <Image
-                          src={`https://ipfs.io/ipfs/${
-                            asset.onchain_metadata.image.split('/')[2]
-                          }`}
-                          layout="fill"
-                          alt="nft-image"
-                        />
-                      </NFTImageContainer>
-                      <NFTTitle>{asset.onchain_metadata.name}</NFTTitle>
-                    </NFTContainer>
+                    <div
+                      style={{
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <NFTContainer key={asset.asset}>
+                        <NFTImageContainer>
+                          <Image
+                            src={`https://ipfs.io/ipfs/${
+                              asset.onchain_metadata.image.split('/')[2]
+                            }`}
+                            layout="fill"
+                            alt="nft-image"
+                          />
+                        </NFTImageContainer>
+                        <NFTTitle>{asset.onchain_metadata.name}</NFTTitle>
+                      </NFTContainer>
+                    </div>
                   )
                 })}
               </NFTsContainer>
@@ -219,7 +228,7 @@ const Card = styled.div`
 
 const TokenTitle = styled.div`
   /* height: 10%; */
-  padding-top: 10px;
+  padding-top: 20px;
   padding-left: 40px;
   padding-bottom: 10px;
 
@@ -324,17 +333,29 @@ const NavWords = styled.div`
 
 const NFTsContainer = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1600px) {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+
+  @media screen and (min-width: 1200px) and (max-width: 1600px) {
+    display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;
+  }
+
+  @media screen and (min-width: 740px) and (max-width: 1200px) {
+    display: grid;
+    grid-template-columns: 50% 50%;
   }
 `
 
 const NFTContainer = styled.div`
-  height: 200px;
+  height: auto;
   background: #252525;
   border-radius: 23px;
   margin: 8px;
@@ -342,27 +363,12 @@ const NFTContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  @media screen and (min-width: 1600px) {
-    height: 300px;
-  }
-
-  @media screen and (min-width: 1200px) and (max-width: 1600px) {
-    height: 250px;
-  }
-
-  @media screen and (min-width: 668px) and (max-width: 1200px) {
-    height: 300px;
-  }
-
-  @media screen and (min-width: 500px) and (max-width: 668px) {
-    height: 225px;
-  }
+  width: 200px;
 `
 
 const NFTImageContainer = styled.div`
-  height: 80%;
-  width: 80%;
+  height: 175px;
+  width: 175px;
   border-radius: 12px;
   margin-top: 20px;
   overflow: hidden;
@@ -376,16 +382,11 @@ const NFTTitle = styled.div`
   font-weight: 700;
   font-size: 13px;
   line-height: 16px;
-  padding: 10px;
   text-align: center;
-  height: 25px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
 
   color: #ffffff;
-
-  @media screen and (max-width: 465px) {
-    height: 80px;
-  }
 `
