@@ -7,6 +7,7 @@ const nextConfig = {
   ) {
     return {
       '/': { page: '/' },
+      '/app': { page: '/app' },
     }
   },
   images: {
