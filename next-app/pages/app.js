@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import Head from 'next/head'
-import { API_URL } from '../../config'
-export async function getServerSideProps() {
+import { API_URL } from '../config'
+import Link from 'next/link'
+
+export async function getStaticProps() {
   const response = await fetch(
     `${API_URL}api/blockfrost/accounts/stake1u8axckdg7yupv2jx00yleddz2ntv52r402h75hjsp9vzw3sau2hzu/addresses/assets`,
   )
@@ -76,9 +78,11 @@ function App({ assets }) {
       </ContentContainer>
 
       <BottomNav>
-        <HCLogoContainer>
-          <HCImageLogo src="/hcIcon.png" layout="fill" />
-        </HCLogoContainer>
+        <Link href="/">
+          <HCLogoContainer>
+            <HCImageLogo src="/hcIcon.png" layout="fill" />
+          </HCLogoContainer>
+        </Link>
 
         <IconContainer onClick={() => setSelectedTab(1)}>
           <ImageContainer>
@@ -162,10 +166,16 @@ const Container = styled.div`
 `
 
 const HCLogoContainer = styled.div`
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   position: relative;
   display: none;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @media screen and (min-width: 900px) {
     display: flex;
@@ -176,6 +186,7 @@ const HCLogoContainer = styled.div`
 const HCImageLogo = styled(Image)`
   object-fit: contain;
   width: 100%;
+  height: 100%;
   display: none;
 
   @media screen and (min-width: 900px) {
@@ -199,6 +210,7 @@ const Card = styled.div`
   height: auto;
   border-radius: 12px;
   margin-top: 40px;
+  margin-bottom: 40px;
 
   @media screen and (min-width: 768px) {
     padding: 20px;
@@ -207,7 +219,7 @@ const Card = styled.div`
 
 const TokenTitle = styled.div`
   /* height: 10%; */
-  padding-top: 40px;
+  padding-top: 10px;
   padding-left: 40px;
   padding-bottom: 10px;
 
@@ -331,16 +343,20 @@ const NFTContainer = styled.div`
   align-items: center;
   flex-direction: column;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1600px) {
     height: 300px;
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1200px) {
-    height: 300px;
-  }
-
-  @media screen and (min-width: 500px) and (max-width: 768px) {
+  @media screen and (min-width: 1200px) and (max-width: 1600px) {
     height: 250px;
+  }
+
+  @media screen and (min-width: 668px) and (max-width: 1200px) {
+    height: 300px;
+  }
+
+  @media screen and (min-width: 500px) and (max-width: 668px) {
+    height: 225px;
   }
 `
 
@@ -362,6 +378,14 @@ const NFTTitle = styled.div`
   line-height: 16px;
   padding: 10px;
   text-align: center;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   color: #ffffff;
+
+  @media screen and (max-width: 465px) {
+    height: 80px;
+  }
 `
