@@ -70,7 +70,9 @@ function Header() {
               Connect
             </Text>
 
-            <EnterAppBtn>Enter App</EnterAppBtn>
+            <Link href="/app" passHref>
+              <EnterAppBtn>Enter App</EnterAppBtn>
+            </Link>
           </DrawerContainer>
         </Drawer>
 
@@ -90,7 +92,7 @@ function Header() {
         <Text onClick={() => window.scrollTo(0, 3000)}>FAQ</Text>
         <Text onClick={() => window.scrollTo(0, 4000)}>Connect</Text>
 
-        <Link href="/app">
+        <Link href="/app" passHref>
           <EnterAppBtn>Enter App</EnterAppBtn>
         </Link>
       </HeadersButtonsContainer>
