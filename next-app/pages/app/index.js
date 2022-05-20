@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import Head from 'next/head'
-
+import { API_URL } from '../../config'
 export async function getServerSideProps() {
   const response = await fetch(
-    'http://localhost:3000/api/blockfrost/accounts/stake1u8axckdg7yupv2jx00yleddz2ntv52r402h75hjsp9vzw3sau2hzu/addresses/assets',
+    `${API_URL}api/blockfrost/accounts/stake1u8axckdg7yupv2jx00yleddz2ntv52r402h75hjsp9vzw3sau2hzu/addresses/assets`,
   )
   const data = await response.json()
 
   var assetData = []
   for (var asset of data) {
     var assetMetadata = await fetch(
-      `http://localhost:3000/api/blockfrost/assets/${asset.unit}`,
+      `${API_URL}/api/blockfrost/assets/${asset.unit}`,
     )
     assetMetadata = await assetMetadata.json()
     assetData.push(assetMetadata)
