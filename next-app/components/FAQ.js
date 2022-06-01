@@ -13,7 +13,7 @@ function FAQ() {
     setExpanded(isExpanded ? panel : false)
   }
   return (
-    <Container>
+    <Container id="faq">
       <FaqTitle>FAQ</FaqTitle>
       <AccordianContainer>
         <CustomAccordian

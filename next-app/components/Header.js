@@ -39,36 +39,15 @@ function Header() {
           onClose={toggleDrawer('right', false)}
         >
           <DrawerContainer>
-            <Text
-              onClick={() => {
-                window.scrollTo(0, 1000)
-                setDrawerState(false)
-              }}
-            >
-              Overview
-            </Text>
+            <Text href="#overview">Overview</Text>
 
             <Link href="https://hivecapitaldao.gitbook.io/whitepaper/" passHref>
               <Text target="_blank">Whitepaper</Text>
             </Link>
 
-            <Text
-              onClick={() => {
-                window.scrollTo(0, 5000)
-                setDrawerState(false)
-              }}
-            >
-              FAQ
-            </Text>
+            <Text href="#faq">FAQ</Text>
 
-            <Text
-              onClick={() => {
-                window.scrollTo(0, 5000)
-                setDrawerState(false)
-              }}
-            >
-              Connect
-            </Text>
+            <Text href="#connect">Connect</Text>
 
             <Link href="/app" passHref>
               <EnterAppBtn>Enter App</EnterAppBtn>
@@ -80,14 +59,14 @@ function Header() {
       </PullOutIconContainer>
 
       <HeadersButtonsContainer>
-        <Text onClick={() => window.scrollTo(0, 1000)}>Overview</Text>
+        <Text href="#overview">Overview</Text>
 
         <Link href="https://hivecapitaldao.gitbook.io/whitepaper/" passHref>
           <Text target="_blank">Whitepaper</Text>
         </Link>
 
-        <Text onClick={() => window.scrollTo(0, 3000)}>FAQ</Text>
-        <Text onClick={() => window.scrollTo(0, 4000)}>Connect</Text>
+        <Text href="#faq">FAQ</Text>
+        <Text href="#connect">Connect</Text>
 
         <Link href="/app" passHref>
           <EnterAppBtn>Enter App</EnterAppBtn>

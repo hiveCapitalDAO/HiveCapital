@@ -70,6 +70,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   @media screen and (min-width: 1100px) {
     flex-direction: row;
@@ -97,7 +98,6 @@ const DescriptionContainer = styled.div`
   justify-content: center;
   align-items: center;
   /* height: 50%; */
-  /* background-color: red; */
 
   @media (min-width: 1100px) {
     height: 100%;
@@ -114,7 +114,7 @@ const DescriptionWrapped = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   overflow-x: hidden;
 
