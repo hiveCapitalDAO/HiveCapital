@@ -7,57 +7,65 @@ function HighlightGrid() {
   return (
     <Container>
       <Roll left ssrFadeout>
-        <Card>
-          <ImageContainer>
-            <MyImage src="/coin.png" layout="fill" alt="coin" />
-          </ImageContainer>
+        <CardWrapper>
+          <Card>
+            <ImageContainer>
+              <MyImage src="/coin.png" layout="fill" alt="coin" />
+            </ImageContainer>
 
-          <DescriptionTitle>Access to $30 Trillion Market</DescriptionTitle>
-          <Description>
-            Hive Capital is brining the Stock Market to investment DAOs. This
-            automated system allows the DAO to invest in companies on the stock
-            market to grow the treasury over time.
-          </Description>
-        </Card>
+            <DescriptionTitle>Access to $30 Trillion Market</DescriptionTitle>
+            <Description>
+              Hive Capital is bringing the Stock Market to investment DAOs. This
+              automated system allows the DAO to invest in companies on the
+              stock market to grow the treasury over time.
+            </Description>
+          </Card>
+        </CardWrapper>
+        <CardWrapper>
+          <Card>
+            <ImageContainer>
+              <MyImage src="/money.png" layout="fill" alt="money" />
+            </ImageContainer>
 
-        <Card>
-          <ImageContainer>
-            <MyImage src="/money.png" layout="fill" alt="money" />
-          </ImageContainer>
-
-          <DescriptionTitle>Distributed Decision Making</DescriptionTitle>
-          <Description>
-            Compared to most investment funds Hive Capital&apos;s decisions will
-            come from all of its members. The Hive Mind of the DAO will work
-            together to find the best investments.
-          </Description>
-        </Card>
+            <DescriptionTitle>Distributed Decision Making</DescriptionTitle>
+            <Description>
+              Compared to most investment funds Hive Capital&apos;s decisions
+              will come from all of its members. The Hive Mind of the DAO will
+              work together to find the best investments.
+            </Description>
+          </Card>
+        </CardWrapper>
       </Roll>
 
       <Roll right ssrFadeout>
-        <Card>
-          <ImageContainer>
-            <MyImage src="/blockchain.png" layout="fill" alt="blockchain" />
-          </ImageContainer>
+        <CardWrapper>
+          <Card>
+            <ImageContainer>
+              <MyImage src="/blockchain.png" layout="fill" alt="blockchain" />
+            </ImageContainer>
 
-          <DescriptionTitle>Built on Milkomeda/Cardano</DescriptionTitle>
-          <Description>
-            This allows for interopolbility betweem different blockchains and
-            their native assets, as well as fast decision making and low
-            transaction fees.
-          </Description>
-        </Card>
+            <DescriptionTitle>Built on Milkomeda/Cardano</DescriptionTitle>
+            <Description>
+              This allows for interopolbility between different blockchains and
+              their native assets, as well as fast decision making and low
+              transaction fees.
+            </Description>
+          </Card>
+        </CardWrapper>
 
-        <Card>
-          <ImageContainer>
-            <MyImage src="/stocks.png" layout="fill" alt="stocks" />
-          </ImageContainer>
+        <CardWrapper>
+          <Card>
+            <ImageContainer>
+              <MyImage src="/stocks.png" layout="fill" alt="stocks" />
+            </ImageContainer>
 
-          <DescriptionTitle>Build and Grow Together</DescriptionTitle>
-          <Description>
-            All members incentives are aligned to increase the value of the DAO.
-          </Description>
-        </Card>
+            <DescriptionTitle>Build and Grow Together</DescriptionTitle>
+            <Description>
+              All members incentives are aligned to increase the value of the
+              DAO.
+            </Description>
+          </Card>
+        </CardWrapper>
       </Roll>
     </Container>
   )
@@ -86,15 +94,28 @@ const Container = styled.div`
   }
 `
 
+const CardWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 const Card = styled.div`
-  background-color: #282828;
+  border: 2px solid white;
   border-radius: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 20px;
   /* width: 85%; */
-  height: 400px;
+  height: 300px;
+  width: 70%;
+
+  @media screen and (min-width: 1300px) {
+    width: 100%;
+  }
 `
 
 const ImageContainer = styled.div`
@@ -115,6 +136,7 @@ const DescriptionTitle = styled.div`
   font-style: normal;
   color: #ffffff;
   margin-bottom: 10px;
+  text-align: center;
 `
 
 const Description = styled.div`
@@ -122,7 +144,7 @@ const Description = styled.div`
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 25px;
+  padding: 8px;
   text-align: center;
   color: #ffffff;
   width: 90%;

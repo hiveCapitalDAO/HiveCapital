@@ -7,7 +7,11 @@ import ExploreWhitepaper from '../components/ExploreWhitepaper'
 import Tokenomics from '../components/Tokenomics'
 import FAQ from '../components/FAQ'
 import HomePageFooter from '../components/HomePageFooter'
-
+import dynamic from 'next/dynamic'
+const NFTCard = dynamic(() => import('../components/NFT'), {
+  ssr: false,
+  loading: () => <div>loading...</div>,
+})
 export default function Home() {
   return (
     <Container>
@@ -24,7 +28,6 @@ export default function Home() {
 
       <Landing />
       <WhyHiveCapital />
-      <HighlightGrid />
       <ExploreWhitepaper />
       <Tokenomics />
       <FAQ />
@@ -34,5 +37,7 @@ export default function Home() {
 }
 
 const Container = styled.div`
-  background: linear-gradient(to top, black, #222222);
+  background-image: url('hivebackground.jpeg');
+  background-size: cover;
+  /* background-repeat: no-repeat; */
 `

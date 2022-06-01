@@ -102,7 +102,7 @@ export default Header
 const Container = styled.div`
   height: 10%;
   width: 100%;
-  /* position: absolute; */
+  /* position: relative; */
   display: flex;
 `
 
@@ -132,12 +132,15 @@ const HeadersButtonsContainer = styled.div`
 `
 
 const EnterAppBtn = styled(Button)`
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
   font-size: 18px;
-  font-family: Inter, sans-serif;
-  font-weight: bold;
-  background-image: linear-gradient(to top, #fbbf84, #ffe2b7);
+  text-align: center;
+  background-color: white;
+  color: #cd8b33;
+
   text-transform: none;
-  color: black;
   padding: 10px;
   height: 35px;
   transition: all 250ms;
@@ -191,7 +194,7 @@ const PullOutIconContainer = styled.div`
 
 const PulloutIcon = styled(DragHandleIcon)`
   display: none;
-  color: #fbbf84;
+  color: white;
   font-size: 35px;
   cursor: pointer;
 

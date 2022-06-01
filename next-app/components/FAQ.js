@@ -122,7 +122,8 @@ const AccordianContainer = styled.div`
 `
 
 const CustomAccordian = styled(Accordion)`
-  background-color: #282828;
+  border: 2px solid white;
+  background-color: transparent;
   border-radius: 10px;
   margin-top: 10px;
   margin-bottom: 10px;

@@ -3,33 +3,30 @@ import styled from '@emotion/styled'
 import Image from 'next/image'
 import { Button } from '@mui/material'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+
+const NFTCard = dynamic(() => import('./NFT'), {
+  ssr: false,
+})
 
 function Body() {
   return (
     <Container>
       <InfoContainer>
-        <InfoCard>
-          <InfoTitle>Hive Capital DAO</InfoTitle>
-          <Description>
-            Self governed entity autonomously investing into both on-chain and
-            off-chain assets to accrue value for all members. Combining Defi and
-            blockchain governance with legacy financial systems.{' '}
-          </Description>
+        <InfoTitle>Hive Capital DAO</InfoTitle>
+        <Description>
+          Self governed entity autonomously investing into both on-chain and
+          off-chain assets to accrue value for all members. Combining Defi and
+          blockchain governance with legacy financial systems.{' '}
+        </Description>
 
-          <Link href="/app" passHref>
-            <LaunchAppBtn>Launch App</LaunchAppBtn>
-          </Link>
-        </InfoCard>
+        <Link href="/app" passHref>
+          <LaunchAppBtn>Launch App</LaunchAppBtn>
+        </Link>
       </InfoContainer>
 
       <RightContainer>
-        <ImageContainer>
-          <CoolImage
-            src={'/investmentImg.png'}
-            alt="Investment image"
-            layout="fill"
-          />
-        </ImageContainer>
+        <NFTCard />
       </RightContainer>
     </Container>
   )
@@ -48,15 +45,18 @@ const Container = styled.div`
 `
 
 const InfoContainer = styled.div`
-  width: 50%;
+  width: 100%;
   height: 100%;
   align-items: center;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding-left: 40px; */
 
-  @media (max-width: 1100px) {
-    width: 100%;
-    /* height: 50%; */
+  @media screen and (min-width: 1100px) {
+    padding-left: 40px;
+    width: 50%;
   }
 `
 
@@ -76,7 +76,7 @@ const InnerInfoContainer = styled.div`
 `
 
 const InfoCard = styled.div`
-  background-color: #282828;
+  /* background-color: #282828; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,72 +97,54 @@ const InfoCard = styled.div`
 `
 
 const InfoTitle = styled.div`
-  background-image: linear-gradient(to top, #fbbf84, #ffe2b7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
+  color: white;
   text-align: center;
   z-index: 100;
 
-  font-size: 75px;
-  font-weight: bold;
-  font-family: Inter, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: Archivo;
   letter-spacing: 3px;
 
-  @media (max-width: 1400px) {
-    font-size: 80px;
-    /* margin-top: 200px; */
+  @media screen and (min-width: 1300px) {
+    font-size: 70px;
   }
 
-  @media (max-width: 1100px) {
+  @media screen and (min-width: 768px) and (max-width: 1300px) {
     font-size: 60px;
-    /* margin-top: 150px; */
   }
 
-  @media (max-width: 768px) {
-    font-size: 55px;
-    /* margin-top: 100px; */
-  }
-
-  @media (max-width: 598px) {
-    font-size: 30px;
+  @media screen and (min-width: 500px) and (max-width: 768px) {
+    font-size: 40px;
   }
 `
 
 const Description = styled.div`
-  font-size: 25px;
+  font-size: 14px;
   color: white;
-  width: 650px;
-  text-align: start;
+  width: 80%;
+  text-align: center;
   letter-spacing: 1.75px;
   margin-top: 20px;
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
 
-  @media (max-width: 1400px) {
-    width: 500px;
-    /* margin-top: 200px; */
+  @media screen and (min-width: 768px) {
+    font-size: 22px;
+    /* width: 700px; */
   }
 
-  @media (max-width: 1100px) {
-    width: 550px;
-    font-size: 20px;
-  }
-
-  @media (max-width: 768px) {
-    width: 450px;
-    font-size: 20px;
-  }
-
-  @media (max-width: 598px) {
-    width: 325px;
-    font-size: 12px;
-    text-align: center;
+  @media screen and (min-width: 500px) and (max-width: 768px) {
+    font-size: 18px;
+    /* width: 400px; */
   }
 `
 
 const LaunchAppBtn = styled(Button)`
-  background-image: linear-gradient(to top, silver, darkgrey);
-  color: black;
+  /* background-image: linear-gradient(to top, silver, darkgrey); */
+  background-color: white;
+  color: #cd8b33;
   margin-top: 40px;
   font-size: 22px;
   font-family: Inter, sans-serif;
@@ -172,11 +154,12 @@ const LaunchAppBtn = styled(Button)`
   padding: 10px;
   height: 50px;
   text-transform: none;
-  border: 1px solid silver;
+  /* border: 1px solid silver; */
 
   &:hover {
+    background-color: white;
     /* color: white; */
-    background-image: linear-gradient(to top, silver, darkgrey);
+    /* background-image: linear-gradient(to top, silver, darkgrey); */
     opacity: 0.8;
     transform: scale(1.02);
   }
@@ -188,16 +171,14 @@ const LaunchAppBtn = styled(Button)`
 `
 
 const RightContainer = styled.div`
-  /* width: 100%;
-  height: 100%; */
-  width: 50%;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 1100px) {
-    width: 100%;
+  @media screen and (min-width: 1100px) {
+    width: 50%;
   }
 `
 

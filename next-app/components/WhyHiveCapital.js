@@ -3,15 +3,16 @@ import styled from '@emotion/styled'
 import Image from 'next/image'
 import { useMediaQuery } from '@mui/material'
 import Fade from 'react-reveal/Fade'
+import HighlightGrid from './HighlightGrid'
 
 function WhyHiveCapital() {
   const matches = useMediaQuery('(min-width: 1200px)')
   const matches2 = useMediaQuery('(min-width: 768px)')
   return (
     <Container id="overview">
-      <Card>
+      <Wrapper>
         <ImageGraphicContainer>
-          <MyImage src="/flowChart.png" layout="fill" />
+          <MyImage src="/clearFlowChart.png" layout="fill" />
         </ImageGraphicContainer>
 
         <DescriptionContainer>
@@ -44,7 +45,8 @@ function WhyHiveCapital() {
             </Fade>
           </DescriptionWrapped>
         </DescriptionContainer>
-      </Card>
+      </Wrapper>
+      <HighlightGrid />
     </Container>
   )
 }
@@ -52,50 +54,40 @@ function WhyHiveCapital() {
 export default WhyHiveCapital
 
 const Container = styled.div`
-  height: 100vh;
+  height: max-content;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: linear-gradient(to bottom, black, #222222, black); */
+  flex-direction: column;
+
+  @media screen and (min-width: 1300px) {
+    height: 100vh;
+    max-height: -webkit-fill-available;
+  }
 `
 
-const Card = styled.div`
-  background: #282828;
-  border-radius: 80px;
-  width: 95%;
-  height: 90%;
+const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
 
-  @media (max-width: 1024px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  @media screen and (min-width: 1100px) {
+    flex-direction: row;
+    width: 100%;
   }
 `
 
 const ImageGraphicContainer = styled.div`
-  height: 50%;
+  height: 550px;
   width: 100%;
   align-items: center;
   justify-content: center;
   display: flex;
   position: relative;
-
-  @media (min-width: 1024px) {
-    height: 100%;
-    width: 50%;
-    /* margin-left: 40px; */
-  }
-
-  @media (max-width: 768px) {
-    height: 50%;
-  }
 `
 
 const MyImage = styled(Image)`
-  object-fit: scale-down;
+  object-fit: contain;
   width: 100%;
 `
 
@@ -104,13 +96,10 @@ const DescriptionContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50%;
+  /* height: 50%; */
+  /* background-color: red; */
 
-  /* @media (max-width: 768px) {
-    height: 55%;
-  } */
-
-  @media (min-width: 1024px) {
+  @media (min-width: 1100px) {
     height: 100%;
     width: 50%;
     justify-content: center;
@@ -130,7 +119,7 @@ const DescriptionWrapped = styled.div`
   overflow-x: hidden;
 
   @media (max-width: 1100px) {
-    align-items: center;
+    /* align-items: center; */
   }
 
   @media (max-width: 768px) {
@@ -153,15 +142,16 @@ const DescriptionCard = styled.div`
 `
 
 const Title = styled.div`
-  font-family: Inter, sans-serif;
-  font-weight: bold;
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 900;
   font-size: 14px;
   color: white;
-  background-image: linear-gradient(to top, #fbbf84, #ffe2b7);
+  /* background-image: linear-gradient(to top, #fbbf84, #ffe2b7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
+  -moz-text-fill-color: transparent; */
 
   @media (min-width: 481px) {
     font-size: 20px;
@@ -202,7 +192,7 @@ const Description = styled.p`
   }
 
   @media (min-width: 1200px) {
-    font-size: 25px;
+    font-size: 20px;
     width: 600px;
   }
 `

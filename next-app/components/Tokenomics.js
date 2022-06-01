@@ -79,7 +79,7 @@ const Container = styled.div`
 `
 
 const TitleContainer = styled.div`
-  background-color: #282828;
+  border: 2px solid white;
   border-radius: 20px;
   width: 80%;
   margin-bottom: 20px;
@@ -109,7 +109,7 @@ const Title = styled.div`
 `
 
 const GraphContainer = styled.div`
-  background-color: #282828;
+  border: 2px solid white;
   border-radius: 20px;
   width: 80%;
   margin-bottom: 20px;
@@ -137,7 +137,7 @@ const ImageContainer = styled.div`
 const DescriptionContainer1 = styled.div`
   height: auto;
   width: 80%;
-  background-color: #282828;
+  border: 2px solid white;
   border-radius: 20px;
   margin-bottom: 20px;
 
@@ -151,7 +151,7 @@ const DescriptionContainer1 = styled.div`
 const DescriptionContainer2 = styled.div`
   height: auto;
   width: 80%;
-  background-color: #282828;
+  border: 2px solid white;
   border-radius: 20px;
   margin-bottom: 20px;
 
@@ -165,7 +165,7 @@ const DescriptionContainer2 = styled.div`
 const DescriptionContainer3 = styled.div`
   height: auto;
   width: 80%;
-  background-color: #282828;
+  border: 2px solid white;
   border-radius: 20px;
   margin-bottom: 20px;
   @media screen and (min-width: 1200px) {
@@ -178,7 +178,7 @@ const DescriptionContainer3 = styled.div`
 const DescriptionContainer4 = styled.div`
   height: auto;
   width: 80%;
-  background-color: #282828;
+  border: 2px solid white;
   border-radius: 20px;
   margin-bottom: 20px;
 

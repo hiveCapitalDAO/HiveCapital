@@ -19,5 +19,6 @@ export default Landing
 const Container = styled.div`
   height: 100vh;
   width: 100vw;
+  max-height: -webkit-fill-available;
   /* background: linear-gradient(to top, black, #222222); */
 `

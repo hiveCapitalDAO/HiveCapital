@@ -170,6 +170,7 @@ const Container = styled.div`
   background-color: black;
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 
   @media screen and (min-width: 900px) {
     flex-direction: row-reverse;
@@ -269,7 +270,7 @@ const BottomNav = styled.div`
   right: 0;
   left: 0;
   position: absolute; */
-  height: 80px;
+  height: 50px;
 
   @media screen and (min-width: 900px) {
     flex-direction: column;
